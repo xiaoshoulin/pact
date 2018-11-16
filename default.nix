@@ -7,11 +7,11 @@ let rp = builtins.fetchTarball {
 
 in
   (import rp {}).project ({ pkgs, ... }: {
-    name = "pact";
+    name = "seal";
     overrides = self: super:
       let guardGhcjs = p: if self.ghc.isGhcjs or false then null else p;
        in {
-            pact = pkgs.haskell.lib.addBuildDepend super.pact pkgs.z3;
+            seal = pkgs.haskell.lib.addBuildDepend super.seal pkgs.z3;
             haskeline = guardGhcjs super.haskeline;
 
             # Needed to get around a requirement on `hspec-discover`.
@@ -51,7 +51,7 @@ in
             }) {};
           };
     packages = {
-      pact = builtins.filterSource
+      seal = builtins.filterSource
         (path: type: !(builtins.elem (baseNameOf path)
            ["result" "dist" "dist-ghcjs" ".git" ".stack-work"]))
         ./.;
@@ -61,8 +61,8 @@ in
       stack = pkgs.stack;
     };
     shells = {
-      ghc = ["pact"];
-      # ghcjs = ["pact"];
+      ghc = ["seal"];
+      # ghcjs = ["seal"];
     };
 
   })
