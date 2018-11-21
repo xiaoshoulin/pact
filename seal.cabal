@@ -163,6 +163,7 @@ library
       , haskeline >= 0.7.3 && < 0.8
       , memory
       , safe-exceptions >= 0.1.5.0 && < 0.2
+      , sbv >= 7.9.0 && < 7.10.0
       , snap-core
       , snap-server
       , statistics >= 0.13.3 && < 0.15
