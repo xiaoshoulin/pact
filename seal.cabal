@@ -190,13 +190,3 @@ executable seal
 
   if os(darwin)
     ghc-options: -optP-Wno-nonportable-include-path
-
-executable bench
-  main-is:             Bench.hs
-  build-depends:       base
-                     , seal
-  hs-source-dirs:      executables
-  ghc-options:         -Wall -threaded -rtsopts -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints
-  ghc-prof-options:    -fprof-auto -fprof-auto-calls
-  default-language:    Haskell2010
-  
