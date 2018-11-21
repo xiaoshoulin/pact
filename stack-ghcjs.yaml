@@ -24,7 +24,6 @@ packages:
    commit: eacf95aac3061275699563e1802eabe4a8f4aaec
 
 extra-deps:
-  - trifecta-2
   - bound-2
   - ed25519-donna-0.1.1
   - hashable-1.2.6.1
