@@ -30,8 +30,15 @@ in
             sbv = pkgs.haskell.lib.dontCheck (self.callCabal2nix "sbv" (pkgs.fetchFromGitHub {
               owner = "LeventErkok";
               repo = "sbv";
-              rev = "3dc60340634c82f39f6c5dca2b3859d10925cfdf";
-              sha256 = "18xcxg1h19zx6gdzk3dfs87447k3xjqn40raghjz53bg5k8cdc31";
+              rev = "9fe20e5586e1f9fe57badfaa8d7c3277e6822322";
+              sha256 = "1n1l3lw6i5h9kvjbcw05548nnsnkgm9j0jwzjmp1kabnc0hiv1c8";
+            }) {});
+         
+            algebraic-graphs = pkgs.haskell.lib.dontCheck (self.callCabal2nix "algebraic-graphs" (pkgs.fetchFromGitHub {
+              owner = "snowleopard";
+              repo = "alga";
+              rev = "ba51378ce960782b959ff3298dd015bc9ef42e46";
+              sha256 = "0kzbwdlwqqw7yazlcqwdk5fr5rzrfg011r6cpwrq4qbqgmng9768";
             }) {});
 
             # Our own custom fork
