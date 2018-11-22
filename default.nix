@@ -30,8 +30,8 @@ in
             sbv = pkgs.haskell.lib.dontCheck (self.callCabal2nix "sbv" (pkgs.fetchFromGitHub {
               owner = "LeventErkok";
               repo = "sbv";
-              rev = "9fe20e5586e1f9fe57badfaa8d7c3277e6822322";
-              sha256 = "1n1l3lw6i5h9kvjbcw05548nnsnkgm9j0jwzjmp1kabnc0hiv1c8";
+              rev = "9d62c4f6c6254b0e5e88ebb9fb3e2d0432ab93b8";
+              sha256 = "0vv2cd5ngrwpwknhvcwjw3mhn15whwng5ma4rn5j6w3r5rj3g8ya";
             }) {});
          
             algebraic-graphs = pkgs.haskell.lib.dontCheck (self.callCabal2nix "algebraic-graphs" (pkgs.fetchFromGitHub {
