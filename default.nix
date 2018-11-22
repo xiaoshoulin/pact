@@ -15,7 +15,7 @@ in
             haskeline = guardGhcjs super.haskeline;
 
             # Needed to get around a requirement on `hspec-discover`.
-            megaparsec = pkgs.haskell.lib.dontCheck super.megaparsec;
+            # megaparsec = pkgs.haskell.lib.dontCheck super.megaparsec;
 
             hedgehog = self.callCabal2nix "hedgehog" (pkgs.fetchFromGitHub {
               owner = "hedgehogqa";
