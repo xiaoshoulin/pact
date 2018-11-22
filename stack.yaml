@@ -18,3 +18,5 @@ extra-deps:
     commit: 6ee9fcb026ebdb49b810802a981d166680d867c9
   - git: https://github.com/LeventErkok/sbv.git
     commit: 3dc60340634c82f39f6c5dca2b3859d10925cfdf # with exposed registerKind
+  - git: https://github.com/mrkkrp/megaparsec.git
+    commit: f5dfb8a6ecd8f1b0a5111e622e238374047f1f6c
