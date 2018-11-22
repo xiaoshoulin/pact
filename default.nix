@@ -41,13 +41,6 @@ in
               sha256 = "0kzbwdlwqqw7yazlcqwdk5fr5rzrfg011r6cpwrq4qbqgmng9768";
             }) {});
             
-            megaparsec = guardGhcjs (pkgs.haskell.lib.dontCheck (self.callCabal2nix "megaparsec" (pkgs.fetchFromGitHub {
-              owner = "mrkkrp";
-              repo = "megaparsec";
-              rev = "b0335b6946707322d5dfe2f4b6c3dbd35832cc99";
-              sha256 = "0ghnna5l8k3bc9n3k3ms0wigxd17fi2fyysns2kmxgmfgzl0d8x6";
-            }) {}));
-            
             # Our own custom fork
             thyme = pkgs.haskell.lib.dontCheck (self.callCabal2nix "thyme" (pkgs.fetchFromGitHub {
               owner = "kadena-io";
