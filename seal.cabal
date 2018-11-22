@@ -150,7 +150,6 @@ library
                      , vector-space >= 0.10.4 && < 0.14
                      , mmorph >= 1.0.0 && < 1.2.0
                      , algebraic-graphs >= 0.2 && <= 0.3
-                     , megaparsec >= 6.0.0 && <= 7.0.0
 
   if !impl(ghcjs)
     build-depends:
@@ -169,6 +168,7 @@ library
       , snap-server
       , statistics >= 0.13.3 && < 0.15
       , yaml
+      , megaparsec >= 6.0.0 && <= 7.0.0
 
   if !impl(ghcjs) && !os(windows)
     build-depends: unix
