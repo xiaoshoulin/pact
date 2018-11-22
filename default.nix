@@ -44,8 +44,8 @@ in
             megaparsec = guardGhcjs (pkgs.haskell.lib.dontCheck (self.callCabal2nix "megaparsec" (pkgs.fetchFromGitHub {
               owner = "mrkkrp";
               repo = "megaparsec";
-              rev = "f5dfb8a6ecd8f1b0a5111e622e238374047f1f6c";
-              sha256 = "09hll3xbd0v59zqhmh482pvp2f92jhfikl43jpjpmb24pmr0dwzb";
+              rev = "b0335b6946707322d5dfe2f4b6c3dbd35832cc99";
+              sha256 = "0ghnna5l8k3bc9n3k3ms0wigxd17fi2fyysns2kmxgmfgzl0d8x6";
             }) {}));
             
             # Our own custom fork
