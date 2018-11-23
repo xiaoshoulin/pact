@@ -271,7 +271,7 @@ blake2b_update bs ctx
                   t1 = _t1 cx + (if t0 < 128 then 1 else 0)
               in (blake2b_compress (cx { _t0 = t0, _t1 = t1 }) False) { _c = 0 }
         cpyBuf s cx = cx {
-          _b = B.take (_c cx) (_b cx) <> s <> B.replicate (128 - _c cx - B.length s) 0,
+          _b = B.take (_c cx) (_b cx) ++ s ++ B.replicate (128 - _c cx - B.length s) 0,
           _c = B.length s + _c cx
           }
 
@@ -288,7 +288,7 @@ blake2s_update bs ctx
                   t1 = _t1 cx + (if t0 < 64 then 1 else 0)
               in (blake2s_compress (cx { _t0 = t0, _t1 = t1 }) False) { _c = 0 }
         cpyBuf s cx = cx {
-          _b = B.take (_c cx) (_b cx) <> s <> B.replicate (64 - _c cx - B.length s) 0,
+          _b = B.take (_c cx) (_b cx) ++ s ++ B.replicate (64 - _c cx - B.length s) 0,
           _c = B.length s + _c cx
           }
 
@@ -299,7 +299,7 @@ blake2b_final ctx = finalCompress ctx & conv where
     let c = fromIntegral $ _c cx
         t0 = _t0 cx + c
         t1 = _t1 cx + (if t0 < c then 1 else 0)
-        b = B.take (_c cx) (_b cx) <> B.replicate (128 - _c cx) 0
+        b = B.take (_c cx) (_b cx) ++ B.replicate (128 - _c cx) 0
     in blake2b_compress (cx { _t0 = t0, _t1 = t1, _b = b }) True
   conv cx = B.pack $ (`map` [0 .. pred (_outlen cx)]) $ \i ->
     fromIntegral $ ((_h cx `at` (i `shiftR` 3)) `shiftR` (8 * (i .&. 7))) .&. 0xFF
@@ -312,7 +312,7 @@ blake2s_final ctx = finalCompress ctx & conv where
     let c = fromIntegral $ _c cx
         t0 = _t0 cx + c
         t1 = _t1 cx + (if t0 < c then 1 else 0)
-        b = B.take (_c cx) (_b cx) <> B.replicate (64 - _c cx) 0
+        b = B.take (_c cx) (_b cx) ++ B.replicate (64 - _c cx) 0
     in blake2s_compress (cx { _t0 = t0, _t1 = t1, _b = b }) True
   conv cx = B.pack $ (`map` [0 .. pred (_outlen cx)]) $ \i ->
     fromIntegral $ ((_h cx `at` (i `shiftR` 2)) `shiftR` (8 * (i .&. 3))) .&. 0xFF
