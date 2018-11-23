@@ -3,11 +3,10 @@
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE CPP #-}
-{-# LANGUAGE NoImplicitPrelude #-}
 
 module Pact.Types.Logger where
 
-import Universum
+import Universum ((<>))
 import Data.Hashable
 import Data.Aeson
 import Data.String
