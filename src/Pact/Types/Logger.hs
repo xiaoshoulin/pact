@@ -118,14 +118,14 @@ runLogIO logger a = runReaderT (logIO a) logger
 #if !defined(ghcjs_HOST_OS)
 _test :: IO ()
 _test = do
-  let config = "Default: {}       \n" <>
-               "Disabled:         \n" <>
-               "  enable: false   \n" <>
-               "Enabled:          \n" <>
-               "  enable: true    \n" <>
-               "IncludeINFO:      \n" <>
-               "  include: [INFO] \n" <>
-               "ExcludeINFO:      \n" <>
+  let config = "Default: {}       \n" ++
+               "Disabled:         \n" ++
+               "  enable: false   \n" ++
+               "Enabled:          \n" ++
+               "  enable: true    \n" ++
+               "IncludeINFO:      \n" ++
+               "  include: [INFO] \n" ++
+               "ExcludeINFO:      \n" ++
                "  exclude: [INFO]"
       rules = either (error . Y.prettyPrintParseException) id $ Y.decodeEither' config
       loggers = initLoggers putStrLn doLog rules
