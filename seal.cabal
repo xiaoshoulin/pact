@@ -151,7 +151,7 @@ library
                      , vector-space >= 0.10.4 && < 0.14
                      , mmorph >= 1.0.0 && < 1.2.0
                      , algebraic-graphs >= 0.2 && <= 0.3
-                  
+                     , universum >= 0.2.1
 
   if !impl(ghcjs)
     build-depends:
