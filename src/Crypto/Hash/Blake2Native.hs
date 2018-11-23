@@ -1,5 +1,4 @@
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE NoImplicitPrelude #-}
 
 -- |
 -- Module      :  Crypto.Hash.Blake2Native
@@ -13,7 +12,7 @@
 
 module Crypto.Hash.Blake2Native where
 
-import Universum
+import Universum ((<>))
 import Data.Word
 import Data.Bits
 import Data.ByteString as B (ByteString,index,unpack,pack,length,take,splitAt,null,replicate)
